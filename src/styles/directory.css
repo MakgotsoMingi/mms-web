@@ -1,0 +1,1019 @@
+:root {
+  --bg-main: #faf9ff;
+  --bg-card: #ffffff;
+  --bg-elevated: #f3f1ff;
+  --accent: #ff4d6d;
+  --accent-hover: #e63958;
+  --accent-soft: rgba(255, 77, 109, 0.12);
+  --accent-secondary: #7b2cbf;
+  --accent-secondary-soft: rgba(123, 44, 191, 0.11);
+  --accent-gold: #ffb703;
+  --accent-gold-soft: rgba(255, 183, 3, 0.18);
+  --accent-cyan: #00b4d8;
+  --accent-cyan-soft: rgba(0, 180, 216, 0.14);
+  --text-main: #181826;
+  --text-muted: #5a5970;
+  --border-subtle: #e6e2fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.directory-shell {
+  min-height: 100vh;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 20px 24px 48px;
+}
+
+.directory-shell *,
+.directory-shell *::before,
+.directory-shell *::after {
+  box-sizing: border-box;
+}
+
+.directory-shell .toast-banner {
+  position: fixed;
+  top: 18px;
+  right: 20px;
+  z-index: 1400;
+  max-width: 420px;
+  padding: 13px 18px;
+  border-radius: 12px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--accent);
+  color: var(--text-main);
+  font-size: 0.88rem;
+  font-weight: 600;
+  box-shadow: 0 12px 28px rgba(24, 24, 38, 0.12);
+}
+
+.directory-shell .top-navbar {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 22px;
+  border-radius: 16px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 6px 22px rgba(123, 44, 191, 0.05);
+  margin-bottom: 18px;
+}
+
+.directory-shell .brand-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.directory-shell .brand-group h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+}
+
+.directory-shell .role-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background-color: var(--accent-secondary-soft);
+  color: var(--accent-secondary);
+  border: 1px solid rgba(123, 44, 191, 0.24);
+}
+
+.directory-shell .nav-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.directory-shell button,
+.directory-shell a.btn-wa-quick {
+  font-family: inherit;
+}
+
+.directory-shell .btn-hub-toggle,
+.directory-shell .btn-add-biz,
+.directory-shell .btn-secondary,
+.directory-shell .btn-logout,
+.directory-shell .btn-clear-search,
+.directory-shell .btn-book-now,
+.directory-shell .btn-message-open,
+.directory-shell .btn-wa-quick,
+.directory-shell .btn-primary-submit,
+.directory-shell .btn-approve,
+.directory-shell .btn-confirm,
+.directory-shell .btn-action-primary,
+.directory-shell .btn-decline,
+.directory-shell .btn-cancel,
+.directory-shell .btn-delete-biz,
+.directory-shell .btn-edit-biz,
+.directory-shell .btn-action-secondary,
+.directory-shell .btn-back,
+.directory-shell .btn-notif {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 15px;
+  border-radius: 10px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+}
+
+.directory-shell .btn-add-biz,
+.directory-shell .btn-primary-submit,
+.directory-shell .btn-book-now,
+.directory-shell .btn-approve,
+.directory-shell .btn-confirm,
+.directory-shell .btn-action-primary {
+  background-color: var(--accent);
+  color: #ffffff;
+  border: 1px solid var(--accent);
+}
+
+.directory-shell .btn-add-biz:hover,
+.directory-shell .btn-primary-submit:hover,
+.directory-shell .btn-book-now:hover,
+.directory-shell .btn-approve:hover,
+.directory-shell .btn-confirm:hover,
+.directory-shell .btn-action-primary:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.directory-shell .btn-hub-toggle,
+.directory-shell .btn-edit-biz,
+.directory-shell .btn-action-secondary {
+  background-color: var(--accent-secondary-soft);
+  color: var(--accent-secondary);
+  border: 1px solid rgba(123, 44, 191, 0.26);
+}
+
+.directory-shell .btn-hub-toggle:hover,
+.directory-shell .btn-edit-biz:hover,
+.directory-shell .btn-action-secondary:hover {
+  background-color: var(--accent-secondary);
+  border-color: var(--accent-secondary);
+  color: #ffffff;
+}
+
+.directory-shell .btn-secondary,
+.directory-shell .btn-clear-search,
+.directory-shell .btn-message-open,
+.directory-shell .btn-back,
+.directory-shell .btn-notif {
+  background-color: var(--bg-elevated);
+  color: var(--text-main);
+  border: 1px solid var(--border-subtle);
+}
+
+.directory-shell .btn-secondary:hover,
+.directory-shell .btn-clear-search:hover,
+.directory-shell .btn-message-open:hover,
+.directory-shell .btn-back:hover,
+.directory-shell .btn-notif:hover {
+  background-color: var(--bg-card);
+  border-color: var(--accent-secondary);
+  color: var(--accent-secondary);
+}
+
+.directory-shell .btn-logout,
+.directory-shell .btn-decline,
+.directory-shell .btn-cancel,
+.directory-shell .btn-delete-biz {
+  background-color: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid rgba(255, 77, 109, 0.28);
+}
+
+.directory-shell .btn-logout:hover,
+.directory-shell .btn-decline:hover,
+.directory-shell .btn-cancel:hover,
+.directory-shell .btn-delete-biz:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.directory-shell .btn-wa-quick {
+  background-color: var(--accent-cyan-soft);
+  color: #007791;
+  border: 1px solid rgba(0, 180, 216, 0.34);
+}
+
+.directory-shell .btn-wa-quick:hover {
+  background-color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  color: #ffffff;
+}
+
+.directory-shell .client-visibility-banner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--accent-gold);
+  margin-bottom: 18px;
+  font-size: 0.9rem;
+}
+
+.directory-shell .filter-bar {
+  display: grid;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: 16px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 22px;
+}
+
+.directory-shell .search-box-wrap {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.directory-shell input[type="text"],
+.directory-shell input[type="email"],
+.directory-shell input[type="password"],
+.directory-shell input[type="tel"],
+.directory-shell input[type="date"],
+.directory-shell input[type="time"],
+.directory-shell select,
+.directory-shell textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-elevated);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.directory-shell input::placeholder,
+.directory-shell textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.directory-shell input:focus,
+.directory-shell select:focus,
+.directory-shell textarea:focus {
+  outline: none;
+  background-color: var(--bg-card);
+  border-color: var(--accent-secondary);
+}
+
+.directory-shell .search-count-badge {
+  padding: 8px 12px;
+  border-radius: 9px;
+  background-color: var(--bg-elevated);
+  color: var(--accent-secondary);
+  border: 1px solid var(--border-subtle);
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.directory-shell .category-pills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+  gap: 8px;
+}
+
+.directory-shell .category-pills button {
+  padding: 9px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-elevated);
+  color: var(--text-muted);
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.directory-shell .category-pills button:hover {
+  background-color: var(--bg-card);
+  border-color: var(--accent-secondary);
+  color: var(--accent-secondary);
+}
+
+.directory-shell .category-pills button.active {
+  background-color: var(--accent-secondary);
+  border-color: var(--accent-secondary);
+  color: #ffffff;
+}
+
+.directory-shell .cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 20px;
+}
+
+.directory-shell .plug-card {
+  display: grid;
+  grid-template-rows: 185px 1fr;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+}
+
+.directory-shell .plug-card:hover {
+  border-color: var(--accent-secondary);
+}
+
+.directory-shell .card-media {
+  position: relative;
+  height: 185px;
+  background-color: var(--bg-elevated);
+}
+
+.directory-shell .card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.directory-shell .price-tag {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background-color: var(--bg-card);
+  color: var(--accent);
+  border: 1px solid var(--border-subtle);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.directory-shell .cat-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background-color: var(--accent-secondary);
+  color: #ffffff;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.directory-shell .card-body {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: 16px;
+}
+
+.directory-shell .card-body h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.directory-shell .location-text {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+}
+
+.directory-shell .services-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.directory-shell .service-chip {
+  padding: 4px 10px;
+  border-radius: 7px;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.directory-shell .booking-rule-tag {
+  padding: 6px 10px;
+  border-radius: 8px;
+  background-color: var(--accent-cyan-soft);
+  color: #007791;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.directory-shell .growth-highlight {
+  padding: 8px 11px;
+  border-radius: 8px;
+  background-color: var(--accent-gold-soft);
+  border-left: 3px solid var(--accent-gold);
+  color: var(--text-main);
+  font-size: 0.8rem;
+}
+
+.directory-shell .card-footer-actions {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 8px;
+  padding-top: 6px;
+}
+
+.directory-shell .business-dashboard-panel,
+.directory-shell .business-hub,
+.directory-shell .business-dashboard,
+.directory-shell .business-control-center,
+.directory-shell .booking-page,
+.directory-shell .booking-shell {
+  display: grid;
+  gap: 18px;
+  padding: 22px;
+  border-radius: 18px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 8px 24px rgba(123, 44, 191, 0.05);
+}
+
+.directory-shell .business-dashboard-top,
+.directory-shell .business-hub-header,
+.directory-shell .dashboard-header,
+.directory-shell .booking-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.directory-shell .business-dashboard-top h2,
+.directory-shell .business-hub-header h2,
+.directory-shell .dashboard-header h2,
+.directory-shell .booking-header h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.directory-shell .business-dashboard-top p,
+.directory-shell .business-hub-subtitle,
+.directory-shell .dashboard-subtitle,
+.directory-shell .booking-subtitle {
+  margin: 4px 0 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.directory-shell .business-kpi-grid,
+.directory-shell .stats-grid,
+.directory-shell .kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
+}
+
+.directory-shell .business-kpi-card,
+.directory-shell .stat-card,
+.directory-shell .kpi-card {
+  display: grid;
+  gap: 6px;
+  padding: 16px;
+  border-radius: 14px;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+}
+
+.directory-shell .business-kpi-label,
+.directory-shell .stat-label,
+.directory-shell .kpi-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.directory-shell .business-kpi-value,
+.directory-shell .stat-value,
+.directory-shell .kpi-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent-secondary);
+}
+
+.directory-shell .business-tab-strip,
+.directory-shell .business-tabs,
+.directory-shell .hub-tabs,
+.directory-shell .slot-grid,
+.directory-shell .day-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+  gap: 10px;
+}
+
+.directory-shell .business-tab-btn,
+.directory-shell .business-tabs button,
+.directory-shell .hub-tabs button,
+.directory-shell .slot-btn,
+.directory-shell .day-btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-elevated);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+}
+
+.directory-shell .business-tab-btn:hover,
+.directory-shell .business-tabs button:hover,
+.directory-shell .hub-tabs button:hover,
+.directory-shell .slot-btn:hover,
+.directory-shell .day-btn:hover {
+  background-color: var(--bg-card);
+  border-color: var(--accent-secondary);
+  color: var(--accent-secondary);
+}
+
+.directory-shell .business-tab-btn.active,
+.directory-shell .business-tabs button.active,
+.directory-shell .hub-tabs button.active,
+.directory-shell .slot-btn.active,
+.directory-shell .day-btn.active {
+  background-color: var(--accent-secondary);
+  border-color: var(--accent-secondary);
+  color: #ffffff;
+}
+
+.directory-shell .business-bookings-grid,
+.directory-shell .business-leads-grid,
+.directory-shell .business-cards-list,
+.directory-shell .booking-list,
+.directory-shell .leads-list,
+.directory-shell .provider-manage-grid,
+.directory-shell .reviews-list,
+.directory-shell .notification-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 14px;
+}
+
+.directory-shell .business-booking-card,
+.directory-shell .business-lead-card,
+.directory-shell .business-item-card,
+.directory-shell .booking-card,
+.directory-shell .lead-card,
+.directory-shell .manage-provider-card,
+.directory-shell .review-card,
+.directory-shell .notification-item {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  padding: 16px;
+  border-radius: 14px;
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-subtle);
+}
+
+.directory-shell .business-booking-card:hover,
+.directory-shell .business-lead-card:hover,
+.directory-shell .business-item-card:hover,
+.directory-shell .booking-card:hover,
+.directory-shell .lead-card:hover,
+.directory-shell .manage-provider-card:hover,
+.directory-shell .review-card:hover {
+  border-color: var(--accent-secondary);
+}
+
+.directory-shell .booking-card-header,
+.directory-shell .business-item-top {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.directory-shell .booking-card-title,
+.directory-shell .business-item-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.directory-shell .booking-pill,
+.directory-shell .status-badge,
+.directory-shell .booking-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  background-color: var(--accent-gold-soft);
+  color: #8c5e00;
+  border: 1px solid rgba(255, 183, 3, 0.35);
+}
+
+.directory-shell .booking-pill.confirmed,
+.directory-shell .status-badge.confirmed,
+.directory-shell .status-badge.approved,
+.directory-shell .status-badge.active,
+.directory-shell .booking-status.confirmed {
+  background-color: var(--accent-cyan-soft);
+  color: #007791;
+  border-color: rgba(0, 180, 216, 0.35);
+}
+
+.directory-shell .booking-pill.cancelled,
+.directory-shell .status-badge.cancelled,
+.directory-shell .status-badge.declined,
+.directory-shell .booking-status.cancelled {
+  background-color: var(--accent-soft);
+  color: var(--accent);
+  border-color: rgba(255, 77, 109, 0.32);
+}
+
+.directory-shell .booking-detail-line,
+.directory-shell .business-meta-text,
+.directory-shell .lead-meta,
+.directory-shell .booking-meta,
+.directory-shell .review-meta,
+.directory-shell .notification-meta {
+  margin: 0;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+.directory-shell .booking-actions-row,
+.directory-shell .business-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.directory-shell .business-form-grid,
+.directory-shell .review-form,
+.directory-shell .booking-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.directory-shell .reviews-section,
+.directory-shell .reviews-compact {
+  display: grid;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+}
+
+.directory-shell .notification-wrap {
+  position: relative;
+}
+
+.directory-shell .notification-badge {
+  padding: 2px 7px;
+  margin-left: 6px;
+  border-radius: 999px;
+  background-color: var(--accent);
+  color: #ffffff;
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.directory-shell .notification-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 1250;
+  width: min(360px, 90vw);
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 14px;
+  border-radius: 14px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 16px 36px rgba(24, 24, 38, 0.14);
+  display: grid;
+  gap: 10px;
+}
+
+.directory-shell .business-empty-state {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: var(--bg-elevated);
+  border: 1px dashed var(--border-subtle);
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+.directory-shell .modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1300;
+  background-color: rgba(24, 24, 38, 0.52);
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+
+.directory-shell .modal-card {
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 22px;
+  border-radius: 16px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+}
+
+.directory-shell .modal-card h3 {
+  margin: 0 0 14px;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.directory-shell .modal-form-stack {
+  display: grid;
+  gap: 12px;
+}
+
+.directory-shell .password-gen-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 8px;
+  align-items: center;
+}
+
+.directory-shell .file-upload-label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.directory-shell .receipt-box {
+  display: grid;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 12px;
+  font-size: 0.86rem;
+}
+
+.directory-shell .receipt-box span {
+  color: var(--text-muted);
+}
+
+.directory-shell .credentials-summary-box .muted-text,
+.directory-shell .receipt-box .muted-text {
+  color: var(--text-muted);
+  margin: 0 0 10px;
+  font-size: 0.86rem;
+}
+
+.directory-shell .modal-btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 720px) {
+  .directory-shell {
+    padding: 14px 14px 36px;
+  }
+
+  .directory-shell .top-navbar,
+  .directory-shell .business-dashboard-top,
+  .directory-shell .business-hub-header,
+  .directory-shell .dashboard-header,
+  .directory-shell .booking-header,
+  .directory-shell .search-box-wrap,
+  .directory-shell .password-gen-row,
+  .directory-shell .card-footer-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .directory-shell .nav-actions {
+    justify-content: flex-start;
+  }
+}
+.directory-shell .social-feed-list {
+  display: grid;
+  gap: 10px;
+}
+
+.directory-shell .social-review-card {
+  display: grid;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+}
+
+.directory-shell .social-review-card.private-comment {
+  border-left: 4px solid var(--accent-gold);
+  background-color: var(--bg-main);
+}
+
+.directory-shell .social-review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.directory-shell .social-author-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.directory-shell .social-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background-color: var(--accent-secondary-soft);
+  color: var(--accent-secondary);
+  font-size: 0.8rem;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+}
+
+.directory-shell .social-timestamp {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.directory-shell .social-badges-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.directory-shell .social-review-body {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--text-main);
+}
+
+.directory-shell .social-replies-thread {
+  display: grid;
+  gap: 6px;
+  padding-left: 12px;
+  border-left: 2px solid var(--accent-secondary-soft);
+}
+
+.directory-shell .social-reply-item {
+  padding: 8px 10px;
+  border-radius: 8px;
+  background-color: var(--bg-elevated);
+  font-size: 0.82rem;
+}
+.directory-shell .calendar-card-box {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 14px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+}
+
+.directory-shell .calendar-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.directory-shell .calendar-toolbar h3 {
+  margin: 0;
+}
+
+.directory-shell .calendar-weekdays-grid,
+.directory-shell .calendar-days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.directory-shell .calendar-weekday-cell {
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  padding: 4px 0;
+}
+
+.directory-shell .calendar-day-empty {
+  min-height: 52px;
+}
+
+.directory-shell .calendar-day-btn {
+  min-height: 54px;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-elevated);
+  color: var(--text-main);
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 2px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.directory-shell .calendar-day-btn.is-open {
+  border-color: var(--accent-secondary);
+  background-color: var(--accent-secondary-soft);
+}
+
+.directory-shell .calendar-day-btn.is-selected {
+  outline: 2px solid var(--accent-primary);
+  background-color: var(--bg-card);
+}
+
+.directory-shell .calendar-day-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.directory-shell .calendar-day-btn small {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.directory-shell .smart-filters-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.directory-shell .smart-chip-btn {
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-elevated);
+  color: var(--text-main);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.directory-shell .smart-chip-btn.active {
+  background-color: var(--accent-secondary-soft);
+  border-color: var(--accent-secondary);
+  color: var(--accent-secondary);
+}

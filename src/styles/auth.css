@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+.ska-auth-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 12% 15%, rgba(255, 77, 109, 0.14), transparent 36%),
+    radial-gradient(circle at 88% 20%, rgba(0, 180, 216, 0.14), transparent 38%),
+    radial-gradient(circle at 50% 92%, rgba(255, 183, 3, 0.16), transparent 42%),
+    #faf9ff;
+  padding: 1.5rem;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color: #181826;
+}
+
+.ska-auth-card {
+  width: 100%;
+  max-width: 440px;
+  background: #ffffff;
+  border: 2px solid #ece8ff;
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 22px 48px rgba(123, 44, 191, 0.09);
+}
+
+.ska-brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.ska-logo-pill {
+  background: linear-gradient(135deg, #ff4d6d, #ff758f);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: -0.02em;
+  padding: 0.42rem 0.95rem;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(255, 77, 109, 0.28);
+}
+
+.ska-tagline {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #7b2cbf;
+  background: #f3e8ff;
+  padding: 0.32rem 0.75rem;
+  border-radius: 999px;
+}
+
+.ska-auth-header h1 {
+  margin: 0 0 0.35rem;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #181826;
+}
+
+.ska-auth-header p {
+  margin: 0 0 1.5rem;
+  font-size: 0.92rem;
+  color: #5a5970;
+  line-height: 1.45;
+}
+
+.ska-role-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  background: #f3f1ff;
+  padding: 0.35rem;
+  border-radius: 14px;
+  margin-bottom: 1.4rem;
+}
+
+.ska-role-btn {
+  border: none;
+  background: transparent;
+  padding: 0.65rem 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #5a5970;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ska-role-btn.active {
+  background: #ffffff;
+  color: #7b2cbf;
+  box-shadow: 0 4px 12px rgba(123, 44, 191, 0.14);
+}
+
+.ska-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.ska-field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.ska-field label {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #27263b;
+}
+
+.ska-field input,
+.ska-field select {
+  padding: 0.78rem 0.95rem;
+  border: 1.5px solid #e2def8;
+  border-radius: 12px;
+  font-size: 0.94rem;
+  font-family: inherit;
+  color: #181826;
+  background: #fcfbff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.ska-field input:focus,
+.ska-field select:focus {
+  outline: none;
+  background: #ffffff;
+  border-color: #7b2cbf;
+  box-shadow: 0 0 0 3px rgba(123, 44, 191, 0.15);
+}
+
+.ska-error-box {
+  background: #fff0f3;
+  border: 1px solid #ffb3c1;
+  color: #c9184a;
+  padding: 0.7rem 0.9rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.ska-submit-btn {
+  background: linear-gradient(135deg, #ff4d6d, #7b2cbf);
+  color: #ffffff;
+  border: none;
+  padding: 0.92rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.96rem;
+  cursor: pointer;
+  margin-top: 0.35rem;
+  box-shadow: 0 8px 20px rgba(123, 44, 191, 0.24);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.ska-submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(255, 77, 109, 0.3);
+}
+
+.ska-submit-btn:active {
+  transform: scale(0.99);
+}
+
+.ska-mode-switch {
+  text-align: center;
+  margin-top: 1.25rem;
+  font-size: 0.88rem;
+  color: #5a5970;
+}
+
+.ska-mode-switch button {
+  background: none;
+  border: none;
+  color: #ff4d6d;
+  font-weight: 800;
+  cursor: pointer;
+  padding: 0 0.25rem;
+  text-decoration: underline;
+}
+
+.ska-demo-bar {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1.5px solid #f0edff;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.ska-demo-bar span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #7a7894;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ska-demo-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.ska-demo-actions button {
+  background: #f3f1ff;
+  border: 1.5px solid #e2def8;
+  padding: 0.55rem 0.65rem;
+  border-radius: 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #181826;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.ska-demo-actions button:hover {
+  background: #ffffff;
+  border-color: #00b4d8;
+  color: #0077b6;
+}
